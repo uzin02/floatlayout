@@ -1,0 +1,140 @@
+@charset "utf-8";
+body {
+    font-family: 'Pretendard Variable', -apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: capitalize;
+    background: black url(images/dark-wood.jpg);
+}
+
+/* container */
+.container { /* 948(b:8) 포함된 값 */
+    border: solid 4px red;
+    width: 948px;
+    margin: 20px auto;
+    background-color: white;
+    /* 
+        box-sizing:border-box; width(padding + border) + margin = 948
+        box-sizing:content-box; width + margin + padding + border = 948 + 8 = 956
+    */
+}
+
+/* header */
+.container h1 {
+    background: rgb(160, 22, 22) url(images/logo.jpg) no-repeat 25px 20px /75px;
+    color: white;
+    font-family: 'Pacifico', Georgia, 'Times New Roman', Times, serif;
+    font-size: 38px;
+    height: 130px; /* minireset에 box-sizing 적용 */
+    line-height: 0.95;
+    padding: 30px 0 0 130px;
+}
+.container h1 em {
+    display: block;
+    font-family: 'Abril Fatface', Georgia, 'Times New Roman', Times, serif;
+    font-size: 32px;
+    font-style: normal;
+    letter-spacing: 2px;
+}
+.container #gnb {
+    background-color: orange;
+    overflow: hidden; /* 자식으로 있는 li의 높이값 인식을 위해 적용 */
+}
+.container #gnb li {
+    float: left;
+}
+.container #gnb li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+    font-family: 'SpoqaHanSansNeo', -apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo", sans-serif;
+    font-weight: 500;
+}
+.container #gnb li a:hover {
+    background-color: white;
+    color: orange;
+}
+
+/* footer */
+.container footer {
+    background-color: rgb(160, 22, 22);
+    color: white;
+    font-weight: 300;
+    font-size: 16px;
+    height: 34px;
+    line-height: 34px; 
+    padding-left: 20px; /* text-indent: 20px; */
+}
+
+/* main 940 */
+.container main {
+    overflow: hidden;
+}
+.container main article { /* box-sizing: border-box;
+    실제 요소의 크기는 658(b:1 + p:20+20)px 이지만 컨텐츠가 들어갈 수 있는 영역은 617px */
+
+    background-color: #e4e4e4;
+    float: left;
+    width: 70%; /* 658 */
+    border-right: blue 1px solid;
+    padding: 30px 20px;
+}
+.container main article figure { /* img:290 + b:1*2 + p:6*2 + m:0= 304 */
+    /* float를 적용 했는데 article의 배경 컬러가 보이는 이유는 부모 요소인 article에도 float가 적용되었기 때문 */
+    background-color: white;
+    border: 1px black solid;
+    float: left;
+    padding: 6px;
+    text-align: right;
+    color: #444;
+    font-size: 16px;
+    font-style: oblique; /* font-style: italic; 사용 가능 */
+    line-height: 1.6;
+    margin: 0 20px 40px 0;
+}
+
+.container main article .txtBox { /* a:617 - f:324 = 293 */
+    float: left;
+    width: 293px;
+    line-height: 1.6;
+}
+.container main article .txtBox h2 {
+    font-size: 26px;
+    font-weight: 700;
+}
+.container main article .txtBox h3 {
+    color: red;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+
+.container main aside {
+    /* background-color: white; */
+    float: left;
+    /* width: 300px; */
+    width: 30%;
+}
+.container main aside h2 {
+    color: red;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 30px 20px;
+}
+.container main aside #recipe a {
+    display: block;
+    color: black;
+    border-bottom: 1px solid blue;
+    font-size: 24px;
+    padding: 14px 20px 10px;
+}  
+.container main aside #recipe a:hover {
+    background-color: blue;
+    color: white;
+}
+.container main aside address { /* address 글자 기울여짐 */
+    font-style: normal;
+    margin-left: 20px;
+}

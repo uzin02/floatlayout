@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+/* 
+@import 다른 스타일 시트를 가져올때 사용. css 문서 내부에서 외부 문서 불러오기
+@import url('경로');
+@import url('../fonts/web.css'); 
+*/
+
+/* 웹폰트: 사용자의 컴퓨터에 설치되지 않은 글꼴을 서버에 올려 놓은 후 해당 사이트에 접속하는 사용자의 컴퓨터에 그 폰트가 다운로드 되어 보여지게 함 */
+@font-face {
+    /* 사용자 지정 이름. 누구나 알 수 있는 이름으로 지정하는 걸 권장. 대부분 원본 이름 그대로 작성 */
+    font-family: 'Pretendard Variable';
+
+    /* 웹폰트 경로 */
+    /* 
+        local('정확한 파일명'이 들어가야함. 내가 설정한 이름 x 
+        로컬 선언을 하는 경우 사용자의 시스템에 설치 되어 있으면 리소스를 요청하지 않음
+    */
+    src: local('PretendardVariable'),
+    url(./fonts/PretendardVariable.woff2) format('woff2-variations'), 
+    url(./fonts/PretendardVariable.woff) format('woff-variations');
+
+    font-style: normal;
+    font-weight: 45 920;
+
+    /* 로딩 상태에 따른 동작 설정
+        auto; 브라우저 기본값
+        block; FOIT 방식. 웹폰트가 로딩되지 않으면 텍스트를 렌더링 하지 않음.
+        로딩 완료 후 적용
+        swap; FOUT 방식. 로딩되는 동안 기본 서체로 보이고 완료되면 웹폰트 적용. 웹폰트 로딩 여부와 관계없이 항상 텍스트 보임
+    */
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SpoqaHanSansNeo';
+    src: local('SpoqaHanSansNeo'),
+    url(./fonts/SpoqaHanSansNeo-Bold.woff2) format('woff2'), 
+    url(./fonts/SpoqaHanSansNeo-Bold.woff) format('woff');
+    font-style: normal;
+    font-display: swap;
+    font-weight: 700; /* bold */
+}
+
+@font-face {
+    font-family: 'SpoqaHanSansNeo';
+    src: local('SpoqaHanSansNeo'),
+        url(./fonts/SpoqaHanSansNeo-Medium.woff2) format('woff2'),
+        url(./fonts/SpoqaHanSansNeo-Medium.woff) format('woff');
+    font-style: normal;
+    font-display: swap;
+    font-weight: 500; /* medium */
+}
+
+@font-face {
+    font-family: 'SpoqaHanSansNeo';
+    src: local('SpoqaHanSansNeo'),
+        url(./fonts/SpoqaHanSansNeo-Regular.woff2) format('woff2'),
+        url(./fonts/SpoqaHanSansNeo-Regular.woff) format('woff');
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400; /* regular */
+}
+
+@font-face {
+    font-family: 'SpoqaHanSansNeo';
+    src: local('SpoqaHanSansNeo'),
+        url(./fonts/SpoqaHanSansNeo-Light.woff2) format('woff2'),
+        url(./fonts/SpoqaHanSansNeo-Light.woff) format('woff');
+    font-style: normal;
+    font-display: swap;
+    font-weight: 300; /* light */
+}
